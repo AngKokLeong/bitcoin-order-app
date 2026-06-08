@@ -12,16 +12,16 @@ jobs:
         node-version: [16.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Cache node modules
         id: cache-nodemodules
-        uses: actions/cache@v2
+        uses: actions/cache@v5
         env:
           cache-name: cache-node-modules
         with:
@@ -48,7 +48,7 @@ jobs:
           npm run test --watch=false --browsers=ChromeHeadlessCustom"
       - name: Conventional Changelog Action
         id: changelog
-        uses: TriPSs/conventional-changelog-action@v3
+        uses: TriPSs/conventional-changelog-action@v6.3.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           output-file: "false"
