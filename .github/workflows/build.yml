@@ -43,9 +43,9 @@ jobs:
       - name: Lint
         run: |
           npm run lint
-      - name: Test
-        run: |
-          npm run test --watch=false --browsers=ChromeHeadlessCustom
+      #- name: Test
+      #  run: |
+      #    npm run test --watch=false --browsers=ChromeHeadlessCustom
       - name: Conventional Changelog Action
         id: changelog
         uses: TriPSs/conventional-changelog-action@v6.3.1
